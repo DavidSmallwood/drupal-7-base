@@ -45,7 +45,6 @@ dependencies[] = views_ui
 dependencies[] = views_responsive_grid
 dependencies[] = views_slideshow
 dependencies[] = views_slideshow_cycle
-dependencies[] = slideshow_cbi
 dependencies[] = webform
 dependencies[] = wysiwyg
 dependencies[] = xmlsitemap
