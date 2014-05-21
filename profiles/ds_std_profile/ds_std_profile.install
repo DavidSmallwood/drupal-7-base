@@ -1,0 +1,52 @@
+<?php
+/**
+ * Implements hook_install()
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function ds_std_profile_install() {
+  include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+  standard_install();
+
+  $fields = array(
+    'slide_image' => array(
+      'field_name' => 'field_slide_image',
+      'type' => 'image',
+    ),
+  );
+
+  foreach($fields as $name => $field) {
+    field_create_field($field);
+  }
+
+  $types = array(
+    array(
+      'type' => 'slide_image',
+      'name' => st('Slide Image'),
+      'base' => 'node_content',
+      'description' => st("Slide Image for the Views Slideshow"),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+  );
+
+  foreach ($types as $type) {
+    $type = node_type_set_defaults($type);
+    node_type_save($type);
+    node_add_body_field($type);
+  }
+
+  $slide_image_instance = array(
+    'field_name' => 'field_slide_image',
+    'entity_type' => 'node',
+    'bundle' => 'slide_image',
+    'label' => 'Slide Image',
+    'required' => 1,
+    'settings' => array(
+      'max_resolution' => '600x',
+    ),
+  );
+  field_create_instance($slide_image_instance);
+  module_disable(array('toolbar'));
+}

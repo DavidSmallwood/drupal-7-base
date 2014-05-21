@@ -1,0 +1,18 @@
+; $Id:
+
+name = "Webform ExactTarget"
+description = "Provides integration between Webform 3.x and the ExactTarget API module."
+package = Webform
+core = 7.x
+dependencies[] = webform
+dependencies[] = exact_target_api
+files[] = webform_exact_target.module
+files[] = webform_exact_target.install
+files[] = webform_exact_target.admin.inc
+
+; Information added by drupal.org packaging script on 2012-09-06
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "webform_exact_target"
+datestamp = "1346893127"
+

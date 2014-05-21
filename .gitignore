@@ -1,0 +1,31 @@
+# ignore project file
+*.komodoproject
+*.bak
+
+#Ignore sql zips in root
+*.sql.*
+
+# Ignore configuration files that may contain sensitive information.
+sites/*/*settings*.php
+sites/default/settings.php
+
+# Ignore paths that contain generated content.
+cache/
+files/
+sites/*/files
+
+# Ignore default text files
+.htaccess
+.htpasswd
+robots.txt
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+sites/all/README.txt
+sites/all/modules/README.txt
+sites/all/themes/README.txt
+READ.ME
